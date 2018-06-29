@@ -1,0 +1,17 @@
+@url = http://localhost:5000
+@productId = 68eb6ffa-1e26-4027-957a-a3234cc3ce40
+
+###`
+GET {{url}}/products
+
+###
+GET {{url}}/products/{{productId}}
+
+###
+POST {{url}}/products
+Content-Type: application/json
+
+{
+    "name": "My product",
+    "price": 1000
+}
