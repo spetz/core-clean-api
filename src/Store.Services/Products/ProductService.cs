@@ -26,10 +26,7 @@ namespace Store.Services.Products
                 .ContinueWith(t => t.Result.Select(Map));
 
         public async Task AddAsync(Guid id, string name, decimal price)
-        {
-            var product = new Product(id, name, price);
-            await _productRepository.AddAsync(product);
-        }
+            => await _productRepository.AddAsync(new Product(id, name, price));
 
         private ProductDto Map(Product product)
             => new ProductDto
